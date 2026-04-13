@@ -1,0 +1,44 @@
+PRFAQ: FIREtrack
+Classification: Planning Artifact — Phase 1 Analysis Output Date: April 2026 Status: Draft v1.0
+
+Press Release
+FOR IMMEDIATE RELEASE
+The retirement calculator that uses your real numbers — not guesses — regardless of which brokers you use.
+
+If you're serious about retiring early but have no idea what your total portfolio is actually worth — across your pension, crypto, real estate, and brokerage accounts — FIREtrack gives you a single, inflation-adjusted picture of everything you own, so you can finally answer the question: is retiring at 50 actually possible for me?
+
+Most people pursuing financial independence are flying blind. Their investments are scattered across pension programs, crypto exchanges, real estate, and brokers in multiple countries and currencies — each with its own dashboard, its own format, its own logic. Stitching it together in a spreadsheet works until it doesn't: automated monthly transfers, shifting exchange rates, and new positions mean hours of manual updates every month just to see a number that's already out of date. And even then, the spreadsheet can't tell you whether your portfolio is outpacing inflation, whether your allocation is working, or whether you're actually on track for your retirement date. Without that picture, every year that passes is a year of guessing — and guessing is how people end up working until 65 when they planned to stop at 50.
+
+FIREtrack is the portfolio intelligence layer for serious FIRE investors. Connect your brokers, upload statements in whatever format they come in — CSV, PDF, Excel, or raw exports — and FIREtrack consolidates everything into a single, multi-currency dashboard updated automatically as your investments move. It calculates real returns adjusted for inflation, benchmarks your portfolio against market indexes, and maps your current trajectory to your target retirement date. For the first time, you don't have to wonder. Open one screen and know: what you have, whether it's growing fast enough, and exactly how many years you are from retiring on your terms — not the government's.
+
+"I built this because early retirement shouldn't be a privilege reserved for people with financial advisors or the patience to master spreadsheets. Anyone with the discipline to invest consistently deserves to see their real picture — unfiltered, inflation-adjusted, and free from broker lock-in. Financial freedom is mind freedom. FIREtrack exists to make that visible."
+
+"I used to feel frustrated saving money every month without knowing if it was ever going to be enough. Now I can see all my assets in one place and know exactly which ones are actually growing faster than inflation. For the first time in years, I'm not nervous about my financial future — I have a real answer to whether I can retire at 50." — Beata K., Director, Warsaw
+
+FIREtrack is available now at firetrack.io. Start your free portfolio analysis in under 10 minutes.
+
+Internal FAQ
+Q: Why does FIREtrack win against trefolio, Sharesight, Kubera, and Portfolio Performance? Our primary European competitor is trefolio (€7.99/month, European-native, actively shipping). trefolio tracks portfolio performance well. It does not answer the defining FIRE question: "will I retire at my target date — and what do I need to change?" It does not calculate inflation-adjusted real returns (only benchmarks against market indexes). It does not use zero-knowledge encryption — it stores data server-side and can technically read it. FIREtrack's moat is the retirement trajectory engine, real return accuracy, and architecturally guaranteed privacy. trefolio wins on breadth of known broker integrations; FIREtrack wins on depth of FIRE-specific insight and any-format parsing for brokers no tool has ever seen.
+
+Q: How does document parsing work for unknown broker formats? Free users map columns once and FIREtrack remembers the format for every future import from that broker. Premium users get AI-powered auto-parsing that reads any document format intelligently and flags uncertain fields for user review. New free users get one AI parse to experience the premium capability before deciding to upgrade.
+
+Q: What is the pricing model and do unit economics work? $100/year (headline price, $8.33/month equivalent) or $15/month for flexibility. Annual is the default offer — not the alternative. This directly undercuts trefolio's annual equivalent (~€96/yr), aligns with FIRE investors' preference for lump-sum over recurring subscriptions, and improves cash flow predictability. Early adopters (first 100 users) get the first year free, converting to the annual rate at renewal. A lifetime deal at launch ($299 one-time) should be considered for early conversion. LLM parsing costs are well under $1 per user per month at target volume. Gross margins are healthy.
+
+Q: Why would a FIRE investor pay a monthly subscription? Wrong frame. This is not an expense — it is the tool that makes better allocation decisions possible. One informed rebalancing decision, made possible by accurate inflation-adjusted data, can be worth years of earlier retirement. The ROI argument is direct: $180/year in cost, potentially years gained in retirement timeline.
+
+Q: What is the single biggest execution risk in year one? Free users hitting column mapping friction before experiencing the product's real value. Mitigated by offering one free AI parse per account — a deliberate taste of premium that converts through demonstrated value, not sales copy.
+
+Q: How does FIREtrack handle real estate — an asset with no API or export? Manual entry of current estimated value, purchase price, and rental income. FIREtrack enriches this with average market price per m² and rental yield benchmarks from Numbeo and Eurostat, so users can see whether their property is appreciating in line with the local market without requiring any integration.
+
+Q: How do we earn trust before users have experienced the product? Two mechanisms at launch: (1) A public guide showing users how to verify in their own browser's Network tab that no plaintext financial data is transmitted to our servers. (2) Open-source client-side encryption code on GitHub — anyone can read and verify it. We actively invite users to check. This is more convincing than any privacy policy.
+
+External FAQ
+Q: Is this safe? I'm uploading my actual broker statements. Think of it like a safe deposit box. The bank holds the box — but only you have the key. FIREtrack works the same way: your financial data is encrypted on your device before it ever reaches our servers. We hold the locked box. You hold the key. We cannot read your data — not because we've promised not to, but because it's technically impossible without your key. Our encryption code is publicly available on GitHub. Anyone can verify it.
+
+Q: My broker is not a major platform. Does this work? If your broker exports any file at all — CSV, PDF, Excel, or any other format — FIREtrack can work with it. Free users map columns once and FIREtrack remembers. Premium users get AI auto-parsing for any document. If a format is new to us, the AI parses what it can and flags uncertain fields for your review. The only brokers we cannot serve are those with no export functionality at all.
+
+Q: How is this different from a spreadsheet? Your spreadsheet tracks balances. FIREtrack tells you whether you will actually retire at your target date. Five brokers, three currency pairs, monthly automated transfers — a spreadsheet requires manual entry and manual exchange rate updates every month. FIREtrack handles all of that automatically, then does something no spreadsheet can: it maps your portfolio trajectory against your retirement date, adjusted for real inflation, and tells you if you are ahead or behind. Users with comparable portfolios save an average of 4 hours per month — more importantly, they make decisions based on complete, current data.
+
+Q: What happens to my data if I cancel or if FIREtrack shuts down? You can export everything you have entered at any time. If you cancel, cloud data is permanently deleted within 24 hours — not archived, not anonymised, deleted. If you use local-only storage, your data never reaches our servers — deleting the app deletes everything. We are GDPR compliant. You can request a copy of all data we hold at any time.
+
+Q: I do not want to connect my broker directly. Can I still use FIREtrack? Yes. FIREtrack works entirely from uploaded files. API broker connections are optional. The product is fully functional with file uploads only — you never need to provide broker credentials or direct access.
