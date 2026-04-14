@@ -1,0 +1,111 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String             @id @default(uuid())
+  email              String             @unique
+  passwordHash       String
+  countryOfResidence String             @default("PL")
+  createdAt          DateTime           @default(now())
+  lastLoginAt        DateTime?
+  parseTrialUsed     Boolean            @default(false)
+  subscription       Subscription?
+  encryptedData      EncryptedData?
+  brokerConnections  BrokerConnection[]
+}
+
+model Subscription {
+  id               String    @id @default(uuid())
+  userId           String    @unique
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tier             Tier      @default(FREE)
+  status           SubStatus @default(ACTIVE)
+  expiresAt        DateTime?
+  stripeCustomerId String?
+  createdAt        DateTime  @default(now())
+}
+
+enum Tier {
+  FREE
+  ANNUAL
+  MONTHLY
+  LIFETIME
+}
+
+enum SubStatus {
+  ACTIVE
+  CANCELLED
+  EXPIRED
+}
+
+model EncryptedData {
+  id            String   @id @default(uuid())
+  userId        String   @unique
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  salt          String
+  encryptedData String
+  iv            String
+  dataVersion   Int      @default(0)
+  lastSyncedAt  DateTime @default(now())
+}
+
+model BrokerConnection {
+  id           String     @id @default(uuid())
+  userId       String
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  broker       BrokerType
+  accessToken  String
+  refreshToken String?
+  lastSyncedAt DateTime?
+  createdAt    DateTime   @default(now())
+}
+
+enum BrokerType {
+  REVOLUT
+  TRADING_212
+  DEGIRO
+}
+
+model MarketPrice {
+  symbol   String
+  date     DateTime
+  price    Decimal
+  currency String
+  source   String
+
+  @@id([symbol, date])
+}
+
+model ExchangeRate {
+  baseCurrency  String
+  quoteCurrency String
+  date          DateTime
+  rate          Decimal
+  source        String   @default("ECB")
+
+  @@id([baseCurrency, quoteCurrency, date])
+}
+
+model CPIDataPoint {
+  country   String
+  yearMonth String
+  hicp      Decimal
+  source    String  @default("Eurostat")
+
+  @@id([country, yearMonth])
+}
+
+model AIParseTemplate {
+  id                String   @id @default(uuid())
+  headerFingerprint String   @unique
+  brokerName        String?
+  mappingSchema     Json
+  usageCount        Int      @default(1)
+  createdAt         DateTime @default(now())
+}
