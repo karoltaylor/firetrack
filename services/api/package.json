@@ -17,7 +17,10 @@
     "vitest": "^3.0.0"
   },
   "dependencies": {
+    "@fastify/cookie": "^9.4.0",
     "@prisma/client": "^5.22.0",
-    "fastify": "^4.29.1"
+    "argon2": "^0.44.0",
+    "fastify": "^4.29.1",
+    "jose": "^6.2.2"
   }
 }

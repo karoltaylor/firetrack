@@ -20,7 +20,7 @@ describe('GET /health', () => {
   });
 
   it('returns 200 with { db: "ok" } when database is reachable', async () => {
-    const app = createApp(mockPrisma);
+    const app = await createApp({ prisma: mockPrisma });
     const res = await app.inject({ method: 'GET', url: '/health' });
 
     expect(res.statusCode).toBe(200);
@@ -29,7 +29,7 @@ describe('GET /health', () => {
 
   it('returns 500 when database is unreachable', async () => {
     mockPrisma.$queryRaw = vi.fn().mockRejectedValue(new Error('DB down'));
-    const app = createApp(mockPrisma);
+    const app = await createApp({ prisma: mockPrisma });
     const res = await app.inject({ method: 'GET', url: '/health' });
 
     expect(res.statusCode).toBe(500);
