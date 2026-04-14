@@ -258,7 +258,7 @@ class FIREtrackDatabase extends Dexie {
       exchangeRates: '[baseCurrency+quoteCurrency+date]',
       marketPrices: '[symbol+date]',
       cpiData: '[country+yearMonth]',
-      importMappings: 'headerFingerprint',
+      importMappings: 'sourceFingerprint',
       parseTrialUsed: '++id',
     })
   }
@@ -842,7 +842,7 @@ model CPIDataPoint {
 
 model AIParseTemplate {
   id              String   @id @default(uuid())
-  headerFingerprint String @unique
+  sourceFingerprint String @unique
   brokerName      String?  // inferred by AI, optional
   mappingSchema   Json     // column index → field name mapping
   usageCount      Int      @default(1)
