@@ -45,7 +45,7 @@ story_location: "{project-root}/_bmad-output/implementation-artifacts"
 development_status:
   # Epic 0: Sprint Zero — Repository & Developer Tooling
   epic-0: in-progress
-  0-1-github-repository-setup: ready-for-dev
+  0-1-github-repository-setup: done
   0-2-branch-protection-rules: backlog
   0-3-git-hooks-husky-lint-staged-commitlint: backlog
   0-4-ci-pipeline-github-actions: backlog

@@ -12,16 +12,23 @@ Stand up the GitHub repository, branch protection, git hooks, CI pipeline, PR te
 
 ### Story 0.1 — GitHub Repository Setup
 **As a** developer,
-**I want** the GitHub repository created and configured,
-**so that** the team has a central place to push code with proper defaults.
+**I want** the GitHub repository scaffolded as a Turborepo monorepo with core workspace packages and local dev tooling,
+**so that** the team has a central place to push code and a fully working local environment from the first clone.
 
 **Acceptance Criteria:**
 - [ ] Create repository `firetrack` — private
 - [ ] Add README.md with project description, local setup instructions, tech stack summary
-- [ ] Add `.gitignore` for Node.js, Next.js, Prisma, `.env` files
-- [ ] Add LICENSE (MIT or proprietary)
+- [ ] Add `.gitignore` for Node.js, Next.js, Prisma, `.env`, Turborepo, pnpm
+- [ ] Add LICENSE (MIT)
+- [ ] Configure `pnpm-workspace.yaml` for `apps/*`, `packages/*`, `services/*`
+- [ ] Configure `turbo.json` with `build`, `dev`, `lint`, `typecheck`, `test` tasks
+- [ ] Add root `package.json`, `tsconfig.json`, `.npmrc`, ESLint, and Prettier configuration
+- [ ] Scaffold `apps/web`, `services/api`, `packages/types`, `packages/calculations`, `packages/crypto`, `packages/parsers`
+- [ ] Add `docker-compose.yml` for local PostgreSQL 16 + Redis 7
+- [ ] Add `.env.example` with all required placeholder values
+- [ ] Verify `pnpm install`, `turbo build`, `turbo test`, and `turbo typecheck` pass
 - [ ] Create default branches: `main` (production), `develop` (integration)
-- [ ] Invite all developers as collaborators with Write role
+- [ ] Manual follow-up: invite collaborators with Write role if needed for the team setup
 
 ---
 
