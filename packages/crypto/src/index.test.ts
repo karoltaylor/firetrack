@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { encrypt, decrypt } from './index.js';
 
 describe('encrypt', () => {

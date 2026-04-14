@@ -15,31 +15,31 @@ FIREtrack is a SaaS investment portfolio tracker for the FIRE (Financial Indepen
 
 ## Technology Stack
 
-| Layer | Technology | Version |
-|---|---|---|
-| Frontend | Next.js (App Router) | 14.x |
-| Language | TypeScript (strict mode) | 5.x |
-| Styling | Tailwind CSS | 3.x |
-| Charts | Recharts | 2.x |
-| Local storage | Dexie.js (IndexedDB) | 4.x |
-| Client state | Zustand | 4.x |
-| Encryption | Web Crypto API (native) | — |
-| PDF parsing | pdfjs-dist | 4.x |
-| Excel parsing | SheetJS (xlsx) | 0.20.x |
-| Backend | Fastify | 4.x |
-| Runtime | Node.js | 20 LTS |
-| Database | PostgreSQL | 16.x |
-| ORM | Prisma | 5.x |
-| Cache | Redis | 7.x |
-| Job queue | BullMQ | 5.x |
-| Auth | JWT + Argon2id | — |
-| Monorepo | Turborepo | latest |
-| Package manager | pnpm | latest |
-| Unit testing | Vitest | latest |
-| E2E testing | Playwright | latest |
-| CI | GitHub Actions | — |
-| Frontend hosting | Vercel | — |
-| Backend hosting | Fly.io (Frankfurt, EU) | — |
+| Layer            | Technology               | Version |
+| ---------------- | ------------------------ | ------- |
+| Frontend         | Next.js (App Router)     | 14.x    |
+| Language         | TypeScript (strict mode) | 5.x     |
+| Styling          | Tailwind CSS             | 3.x     |
+| Charts           | Recharts                 | 2.x     |
+| Local storage    | Dexie.js (IndexedDB)     | 4.x     |
+| Client state     | Zustand                  | 4.x     |
+| Encryption       | Web Crypto API (native)  | —       |
+| PDF parsing      | pdfjs-dist               | 4.x     |
+| Excel parsing    | SheetJS (xlsx)           | 0.20.x  |
+| Backend          | Fastify                  | 4.x     |
+| Runtime          | Node.js                  | 20 LTS  |
+| Database         | PostgreSQL               | 16.x    |
+| ORM              | Prisma                   | 5.x     |
+| Cache            | Redis                    | 7.x     |
+| Job queue        | BullMQ                   | 5.x     |
+| Auth             | JWT + Argon2id           | —       |
+| Monorepo         | Turborepo                | latest  |
+| Package manager  | pnpm                     | latest  |
+| Unit testing     | Vitest                   | latest  |
+| E2E testing      | Playwright               | latest  |
+| CI               | GitHub Actions           | —       |
+| Frontend hosting | Vercel                   | —       |
+| Backend hosting  | Fly.io (Frankfurt, EU)   | —       |
 
 ## Monorepo Structure
 
@@ -81,6 +81,7 @@ firetrack/
 ## Coding Standards
 
 ### TypeScript
+
 - Strict mode enabled on all packages (`"strict": true` in tsconfig)
 - No `any` types — use `unknown` with type narrowing when type is truly unknown
 - Prefer `interface` over `type` for object shapes
@@ -88,6 +89,7 @@ firetrack/
 - Use `const` by default; `let` only when reassignment is necessary
 
 ### Naming Conventions
+
 - Files: `kebab-case.ts` (e.g. `fire-trajectory.ts`)
 - Components: `PascalCase.tsx` (e.g. `DashboardLayout.tsx`)
 - Functions/variables: `camelCase` (e.g. `calculateXIRR`)
@@ -96,6 +98,7 @@ firetrack/
 - Package scoping: `@firetrack/` prefix for all internal packages
 
 ### Commit Convention (Conventional Commits)
+
 - `feat:` — new feature
 - `fix:` — bug fix
 - `chore:` — tooling, config
@@ -107,6 +110,7 @@ firetrack/
 - Scope encouraged: `feat(auth): add JWT refresh`
 
 ### Testing
+
 - Unit tests: Vitest, co-located with source as `*.test.ts`
 - TDD workflow: red-green-refactor
 - Financial calculations: validate against Excel reference values to 4 decimal places
@@ -114,6 +118,7 @@ firetrack/
 - E2E: Playwright for critical user flows
 
 ### Code Style
+
 - ESLint for linting, Prettier for formatting
 - Max line length: 100 characters (Prettier default)
 - Semicolons: yes
@@ -123,6 +128,7 @@ firetrack/
 - Imports: sorted by external, then internal, then relative
 
 ### Security Rules
+
 - Never log or store encryption keys, passwords, or plaintext financial data
 - Never transmit financial data to the server unencrypted (free tier: never at all)
 - Argon2id for password hashing (64MB memory, 3 iterations, 4 parallelism)
@@ -131,6 +137,7 @@ firetrack/
 - AES-256-GCM with random 12-byte IV for data encryption (never reuse IVs)
 
 ### API Conventions
+
 - REST endpoints under `/api/`
 - JSON request/response bodies
 - HTTP status codes: 200 (success), 201 (created), 400 (validation), 401 (unauthorized), 403 (forbidden), 404 (not found), 409 (conflict), 429 (rate limited), 500 (server error)
@@ -148,6 +155,7 @@ firetrack/
 ## Key Planning Documents
 
 Located in `_bmad-output/planning-artifacts/`:
+
 - `prd-firetrack.md` — Product Requirements Document
 - `architecture-firetrack.md` — Full technical architecture
 - `domain-research-firetrack.md` — Financial domain knowledge (XIRR, TWR, FIRE calculations)
