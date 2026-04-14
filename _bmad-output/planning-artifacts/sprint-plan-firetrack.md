@@ -23,9 +23,14 @@
 - [ ] Create GitHub organisation `firetrack-app` (or personal repo for solo founder phase)
 - [ ] Create repository `firetrack` — **private**
 - [ ] Add `README.md` with: project description, local setup instructions, tech stack summary
-- [ ] Add `.gitignore` for Node.js, Next.js, Prisma, `.env` files
-- [ ] Add `LICENSE` (MIT or proprietary — decide before first commit)
-- [ ] Invite all developers as collaborators with **Write** role (not Admin)
+- [ ] Add `.gitignore` for Node.js, Next.js, Prisma, `.env`, Turborepo, pnpm
+- [ ] Add `LICENSE` (MIT)
+- [ ] Add root monorepo config: `package.json`, `pnpm-workspace.yaml`, `turbo.json`, `tsconfig.json`, `.npmrc`
+- [ ] Add root quality config: ESLint and Prettier
+- [ ] Scaffold `apps/web`, `services/api`, `packages/types`, `packages/calculations`, `packages/crypto`, `packages/parsers`
+- [ ] Add `.env.example` and `docker-compose.yml` for local PostgreSQL 16 + Redis 7
+- [ ] Verify `pnpm install`, `turbo build`, `turbo test`, and `turbo typecheck`
+- [ ] Manual follow-up: invite collaborators with **Write** role (not Admin) if needed
 - [ ] Create default branches: `main` (production), `develop` (integration)
 
 #### S0.2 — Branch Protection Rules

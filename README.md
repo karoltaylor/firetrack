@@ -61,7 +61,7 @@ cp .env.example .env.local
 # Edit .env.local with your values
 
 # 4. Start local databases
-docker-compose up -d
+docker compose up -d
 
 # 5. Build all packages
 pnpm build
