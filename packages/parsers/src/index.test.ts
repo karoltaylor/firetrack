@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+
 import { generateHeaderFingerprint } from './index.js';
 
 describe('generateHeaderFingerprint', () => {

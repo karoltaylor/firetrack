@@ -4,3 +4,7 @@ dist/
 coverage/
 .turbo/
 pnpm-lock.yaml
+_bmad/
+_bmad-output/
+.cursor/
+.claude/

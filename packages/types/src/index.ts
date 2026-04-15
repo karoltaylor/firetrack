@@ -41,3 +41,25 @@ export interface Account {
   currency: string;
   isActive: boolean;
 }
+
+export interface RealEstateAsset {
+  id: string;
+  userId: string;
+  name: string;
+  address?: string;
+  propertyType: 'residential' | 'commercial' | 'land' | 'other';
+  purchasePrice: number;
+  purchaseDate: string;
+  currentValue: number;
+  currency: string;
+  notes?: string;
+}
+
+export interface ColumnMapping {
+  id: string;
+  sourceFingerprint: string;
+  brokerName?: string;
+  mappings: Record<string, keyof Transaction>;
+  createdAt: string;
+  updatedAt: string;
+}

@@ -4,23 +4,23 @@ Investment portfolio tracker for the **FIRE** (Financial Independence, Retire Ea
 
 ## Tech Stack
 
-| Layer | Technology | Version |
-|---|---|---|
-| Frontend | Next.js (App Router) | 14.x |
-| Language | TypeScript (strict mode) | 5.x |
-| Styling | Tailwind CSS | 3.x |
-| Charts | Recharts | 2.x |
-| Local Storage | Dexie.js (IndexedDB) | 4.x |
-| State | Zustand | 4.x |
-| Encryption | Web Crypto API | native |
-| Backend | Fastify | 4.x |
-| Runtime | Node.js | 20 LTS |
-| Database | PostgreSQL | 16.x |
-| ORM | Prisma | 5.x |
-| Cache | Redis | 7.x |
-| Monorepo | Turborepo + pnpm | latest |
-| Testing | Vitest + Playwright | latest |
-| CI/CD | GitHub Actions | — |
+| Layer         | Technology               | Version |
+| ------------- | ------------------------ | ------- |
+| Frontend      | Next.js (App Router)     | 14.x    |
+| Language      | TypeScript (strict mode) | 5.x     |
+| Styling       | Tailwind CSS             | 3.x     |
+| Charts        | Recharts                 | 2.x     |
+| Local Storage | Dexie.js (IndexedDB)     | 4.x     |
+| State         | Zustand                  | 4.x     |
+| Encryption    | Web Crypto API           | native  |
+| Backend       | Fastify                  | 4.x     |
+| Runtime       | Node.js                  | 20 LTS  |
+| Database      | PostgreSQL               | 16.x    |
+| ORM           | Prisma                   | 5.x     |
+| Cache         | Redis                    | 7.x     |
+| Monorepo      | Turborepo + pnpm         | latest  |
+| Testing       | Vitest + Playwright      | latest  |
+| CI/CD         | GitHub Actions           | —       |
 
 ## Monorepo Structure
 
@@ -61,7 +61,7 @@ cp .env.example .env.local
 # Edit .env.local with your values
 
 # 4. Start local databases
-docker-compose up -d
+docker compose up -d
 
 # 5. Build all packages
 pnpm build
@@ -78,14 +78,14 @@ pnpm typecheck
 
 ### Common Commands
 
-| Command | Description |
-|---|---|
-| `pnpm build` | Build all packages |
-| `pnpm dev` | Start all packages in dev mode |
-| `pnpm test` | Run all tests |
-| `pnpm lint` | Lint all packages |
-| `pnpm typecheck` | Type-check all packages |
-| `pnpm format` | Format all files with Prettier |
+| Command             | Description                      |
+| ------------------- | -------------------------------- |
+| `pnpm build`        | Build all packages               |
+| `pnpm dev`          | Start all packages in dev mode   |
+| `pnpm test`         | Run all tests                    |
+| `pnpm lint`         | Lint all packages                |
+| `pnpm typecheck`    | Type-check all packages          |
+| `pnpm format`       | Format all files with Prettier   |
 | `pnpm format:check` | Check formatting without writing |
 
 ## License
